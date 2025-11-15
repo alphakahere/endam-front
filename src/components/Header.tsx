@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Button from "@/ui/Button";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
       <div className="container mx-auto px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
               <Image src="/images/logo.png" alt="ENDAM" width={93} height={63} />
           </div>
 
@@ -40,9 +41,9 @@ export default function Header() {
           </div>
 
           {/* CTA Button */}
-          <button className="px-6 py-2 bg-gradient-to-b from-[#1B5E20] to-[#4FC3F7] text-white rounded-2xl text-sm font-medium hover:shadow-lg transition-shadow font-poppins">
+          <Button>
             Demander une démo
-          </button>
+          </Button>
         </nav>
       </div>
     </header>
