@@ -29,7 +29,7 @@ export default function Solutions() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
           {/* Card 1 - Diagnostic agronomique digital */}
           <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <div className="bg-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
               <Microscope className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base text-center">
@@ -39,7 +39,7 @@ export default function Solutions() {
 
           {/* Card 2 - Conseil et suivi sur mesure */}
           <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <div className="bg-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
               <UserCheck className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base text-center">
@@ -49,7 +49,7 @@ export default function Solutions() {
 
           {/* Card 3 - Accompagnement des projets de régénération des sols */}
           <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <div className="bg-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
               <Sprout className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base text-center">
@@ -59,7 +59,7 @@ export default function Solutions() {
 
           {/* Card 4 - Biostimulants naturels à base de microbiotes */}
           <div className="bg-white rounded-3xl p-6 shadow-sm md:col-start-1">
-            <div className="bg-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
               <FileText className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base text-center">
@@ -69,7 +69,7 @@ export default function Solutions() {
 
           {/* Card 5 - Accélérateur de maturation de compost */}
           <div className="bg-white rounded-3xl p-6 shadow-sm md:col-start-2">
-            <div className="bg-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
               <Timer className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base text-center">

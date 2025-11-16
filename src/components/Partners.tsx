@@ -7,7 +7,7 @@ export default function Partners() {
       <div className="container mx-auto px-10">
         <div className="max-w-5xl mx-auto">
           {/* White Card with Border */}
-          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg border border-blue-200">
+          <div>
             {/* Main Title */}
             <h2 className="text-2xl lg:text-3xl font-poppins font-medium text-primary text-center mb-4">
               Connecté à des sources de données et institutions de confiance
@@ -18,8 +18,9 @@ export default function Partners() {
               En partenariat avec des organisations de premier plan pour fournir une intelligence agricole fiable
             </p>
 
-            {/* Partnership Logos and Descriptions */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg">
+              {/* Partnership Logos and Descriptions */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {/* ANACIM */}
               <div className="text-center">
                 <div className="mb-4 flex justify-center">
@@ -91,6 +92,7 @@ export default function Partners() {
               <Button variant="outline" className="px-8 py-3">
                 Explorer la Documentation API
               </Button>
+            </div>
             </div>
           </div>
         </div>

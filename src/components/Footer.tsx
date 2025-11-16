@@ -128,7 +128,7 @@ export default function Footer() {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-white hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-full border-2 bg-white/10 border-white/10 flex items-center justify-center hover:border-white/20 hover:bg-white/20 transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5 text-white" />
@@ -137,14 +137,14 @@ export default function Footer() {
               href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-white hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-full border-2 bg-white/10 border-white/10 flex items-center justify-center hover:border-white/20 hover:bg-white/20 transition-colors"
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5 text-white" />
             </a>
             <a 
               href="mailto:contact@endam.agri" 
-              className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-white hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-full border-2 bg-white/10 border-white/10 flex items-center justify-center hover:border-white/20 hover:bg-white/20 transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5 text-white" />

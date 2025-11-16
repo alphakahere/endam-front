@@ -12,7 +12,7 @@ export default function Impact() {
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1B5E20]/80 to-[#4FC3F7]/80 z-0" />
+      <div className="absolute inset-0 bg-linear-to-b from-[#1B5E20]/70 to-[#4FC3F7]/70 z-0" />
       
       <div className="container mx-auto px-10 relative z-10">
         {/* Header Section */}
@@ -28,33 +28,33 @@ export default function Impact() {
         {/* Four KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-6xl mx-auto">
           {/* Card 1 - +30% Rendement */}
-          <div className="bg-gradient-to-b from-[#1976D2] to-[#64B5F6] rounded-2xl p-6 shadow-lg text-white">
-            <div className="text-4xl font-poppins font-bold mb-2">+30%</div>
-            <p className="font-inter font-normal text-sm">
+          <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-2xl p-6 shadow-lg text-white">
+            <div className="text-base text-center font-inter font-normal mb-2">+30%</div>
+            <p className="text-center font-inter font-normal text-sm">
               Augmentation moyenne du rendement
             </p>
           </div>
 
           {/* Card 2 - 55+ Agriculteurs */}
-          <div className="bg-gradient-to-b from-[#1976D2] to-[#64B5F6] rounded-2xl p-6 shadow-lg text-white">
-            <div className="text-4xl font-poppins font-bold mb-2">55+</div>
-            <p className="font-inter font-normal text-sm">
+          <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-2xl p-6 shadow-lg text-white">
+            <div className="text-base text-center font-inter font-normal mb-2">55+</div>
+            <p className="text-center font-inter font-normal text-sm">
               Agriculteurs accompagnés
             </p>
           </div>
 
           {/* Card 3 - 100% Données certifiées */}
-          <div className="bg-gradient-to-b from-[#1976D2] to-[#64B5F6] rounded-2xl p-6 shadow-lg text-white">
-            <div className="text-4xl font-poppins font-bold mb-2">100%</div>
-            <p className="font-inter font-normal text-sm">
+          <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-2xl p-6 shadow-lg text-white">
+            <div className="text-base text-center font-inter font-normal mb-2">100%</div>
+            <p className="text-center font-inter font-normal text-sm">
               Données certifiées pour les banques
             </p>
           </div>
 
           {/* Card 4 - -40% Pesticides & Eau */}
-          <div className="bg-gradient-to-b from-[#1976D2] to-[#64B5F6] rounded-2xl p-6 shadow-lg text-white">
-            <div className="text-4xl font-poppins font-bold mb-2">-40%</div>
-            <p className="font-inter font-normal text-sm">
+          <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-2xl p-6 shadow-lg text-white">
+            <div className="text-base text-center font-poppins font-bold mb-2">-40%</div>
+            <p className="text-center font-inter font-normal text-sm">
               Utilisation pesticides & eau
             </p>
           </div>

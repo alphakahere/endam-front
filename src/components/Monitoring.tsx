@@ -1,4 +1,4 @@
-import { Zap, MapPin, Camera, AlertTriangle, CheckCircle, Leaf, Crosshair } from "lucide-react";
+import { MapPin, Camera, AlertTriangle, CheckCircle, Leaf, Crosshair, Brain } from "lucide-react";
 import Image from "next/image";
 
 export default function Monitoring() {
@@ -9,9 +9,9 @@ export default function Monitoring() {
           {/* Left Column - Text and Features */}
           <div>
             {/* Header Badge */}
-            <div className="flex items-center gap-2 bg-[#E3F2FD] rounded-2xl w-min px-4 py-2 mb-6 shadow-sm">
-              <Zap className="w-5 h-5 text-[#64B5F6]" />
-              <span className="text-gray-700 font-inter font-normal text-sm">Propulsé par l'IA</span>
+            <div className="flex items-center gap-2 bg-[#E3F2FD] rounded-2xl w-min px-4 py-2 mb-6 shadow-sm shrink-0">
+              <Brain className="w-5 h-5 text-[#64B5F6]" />
+              <span className="text-gray-700 font-inter font-normal text-sm whitespace-nowrap">Propulsé par l'IA</span>
             </div>
 
             {/* Main Title */}
@@ -28,16 +28,15 @@ export default function Monitoring() {
             <div className="space-y-6">
               {/* Step 1 */}
               <div className="flex gap-4">
-                <div className="relative flex-shrink-0">
-                  <div className="bg-gradient-to-b from-[#1B5E20] to-[#81C784] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
+                <div className="relative shrink-0">
+                  <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
                     <div className="relative w-6 h-6 flex items-center justify-center">
-                      <Crosshair className="w-5 h-5 text-white opacity-70 absolute" />
                       <MapPin className="w-4 h-4 text-white absolute" />
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-col gap-2 mb-1">
                     <span className="text-gray-400 font-inter font-normal text-sm">Step 1</span>
                     <h3 className="text-primary font-poppins font-medium text-lg">
                       Cartographie & Configuration
@@ -51,13 +50,13 @@ export default function Monitoring() {
 
               {/* Step 2 */}
               <div className="flex gap-4">
-                <div className="relative flex-shrink-0">
-                  <div className="bg-gradient-to-b from-[#1B5E20] to-[#81C784] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
+                <div className="relative shrink-0">
+                  <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
                     <Camera className="w-6 h-6 text-white" />
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-col gap-2 mb-1">
                     <span className="text-gray-400 font-inter font-normal text-sm">Step 2</span>
                     <h3 className="text-primary font-poppins font-medium text-lg">
                       Suivi Phénologique
@@ -71,13 +70,13 @@ export default function Monitoring() {
 
               {/* Step 3 */}
               <div className="flex gap-4">
-                <div className="relative flex-shrink-0">
-                  <div className="bg-gradient-to-b from-[#1B5E20] to-[#81C784] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
+                <div className="relative shrink-0">
+                  <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
                     <AlertTriangle className="w-6 h-6 text-white" />
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-col gap-2 mb-1">
                     <span className="text-gray-400 font-inter font-normal text-sm">Step 3</span>
                     <h3 className="text-primary font-poppins font-medium text-lg">
                       Détection d'Anomalies
@@ -91,13 +90,13 @@ export default function Monitoring() {
 
               {/* Step 4 */}
               <div className="flex gap-4">
-                <div className="relative flex-shrink-0">
-                  <div className="bg-gradient-to-b from-[#1B5E20] to-[#81C784] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
+                <div className="relative shrink-0">
+                  <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-full w-14 h-14 flex items-center justify-center border-2 border-[#C8E6C9]">
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-col gap-2 mb-1">
                     <span className="text-gray-400 font-inter font-normal text-sm">Step 4</span>
                     <h3 className="text-primary font-poppins font-medium text-lg">
                       Recommandations Personnalisées

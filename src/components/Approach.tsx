@@ -1,4 +1,4 @@
-import { Zap, Database, Leaf, Activity } from "lucide-react";
+import { Zap, Database, Activity, Brain } from "lucide-react";
 import Image from "next/image";
 
 export default function Approach() {
@@ -103,7 +103,7 @@ export default function Approach() {
 
               {/* Advice Box */}
               <div className="bg-[#FDD8351A] rounded-2xl p-6">
-                <Leaf className="w-10 h-10 text-primary mb-2" />
+                <Brain className="w-10 h-10 text-primary mb-2" />
                 <h4 className="text-primary font-poppins font-medium text-xl mb-2">
                   Conseils
                 </h4>

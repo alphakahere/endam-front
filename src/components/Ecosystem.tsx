@@ -18,7 +18,7 @@ export default function Ecosystem() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Card 1 - Mobile Application */}
           <div className="bg-white rounded-2xl p-6 shadow-sm">
-            <div className="bg-gradient-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4">
               <Smartphone className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base">
@@ -28,7 +28,7 @@ export default function Ecosystem() {
 
           {/* Card 2 - Web Interface */}
           <div className="bg-white rounded-2xl p-6 shadow-sm">
-            <div className="bg-gradient-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4">
               <Grid3x3 className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base">
@@ -38,7 +38,7 @@ export default function Ecosystem() {
 
           {/* Card 3 - Decision-maker Tool */}
           <div className="bg-white rounded-2xl p-6 shadow-sm">
-            <div className="bg-gradient-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4">
+            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4">
               <BarChart3 className="w-8 h-8 text-white" />
             </div>
             <p className="text-gray-700 font-inter font-normal text-base">
