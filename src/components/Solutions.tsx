@@ -1,91 +1,181 @@
+"use client";
+
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 import { Leaf, Microscope, UserCheck, Sprout, FileText, Timer } from "lucide-react";
 
 export default function Solutions() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-10">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          {/* Badge */}
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="bg-[#C8E6C9] rounded-full px-6 py-2 flex items-center gap-2">
-              <Leaf className="w-4 h-4 text-primary" />
-              <span className="text-primary font-inter font-normal text-sm">Nos Solutions</span>
-            </div>
-          </div>
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-          {/* Subtitle */}
-          <p className="text-gray-600 font-inter font-normal text-sm mb-2">
-            Nos Services / Produits
-          </p>
+	const solutions = [
+		{
+			icon: Microscope,
+			title: "Diagnostic agronomique digital",
+		},
+		{
+			icon: UserCheck,
+			title: "Conseil et suivi sur mesure",
+		},
+		{
+			icon: Sprout,
+			title: "Accompagnement des projets de régénération des sols",
+		},
+		{
+			icon: FileText,
+			title: "Biostimulants naturels à base de microbiotes",
+			colStart: "md:col-start-1",
+		},
+		{
+			icon: Timer,
+			title: "Accélérateur de maturation de compost",
+			colStart: "md:col-start-2",
+		},
+	];
 
-          {/* Main Description */}
-          <p className="text-gray-700 font-inter font-normal text-base lg:text-lg max-w-3xl mx-auto">
-            Des solutions complètes pour accompagner la transformation agricole et la régénération des sols
-          </p>
-        </div>
+	return (
+		<section ref={ref} className="py-20 bg-white">
+			<div className="container mx-auto px-4 sm:px-6 md:px-10">
+				{/* Header Section */}
+				<motion.div
+					className="text-center mb-12"
+					initial={{ opacity: 0, y: 30 }}
+					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+					transition={{ duration: 0.6 }}
+				>
+					{/* Badge */}
+					<motion.div
+						className="flex items-center justify-center gap-2 mb-4"
+						initial={{ opacity: 0, scale: 0.9 }}
+						animate={
+							isInView
+								? { opacity: 1, scale: 1 }
+								: { opacity: 0, scale: 0.9 }
+						}
+						transition={{ duration: 0.4, delay: 0.2 }}
+					>
+						<div className="bg-[#C8E6C9] rounded-full px-6 py-2 flex items-center gap-2">
+							<Leaf className="w-4 h-4 text-primary" />
+							<span className="text-primary font-inter font-normal text-sm">
+								Nos Solutions
+							</span>
+						</div>
+					</motion.div>
 
-        {/* Service/Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-          {/* Card 1 - Diagnostic agronomique digital */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
-              <Microscope className="w-8 h-8 text-white" />
-            </div>
-            <p className="text-gray-700 font-inter font-normal text-base text-center">
-              Diagnostic agronomique digital
-            </p>
-          </div>
+					{/* Subtitle */}
+					<motion.p
+						className="text-gray-600 font-inter font-normal text-sm mb-2"
+						initial={{ opacity: 0, y: 20 }}
+						animate={
+							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+						}
+						transition={{ duration: 0.6, delay: 0.3 }}
+					>
+						Nos Services / Produits
+					</motion.p>
 
-          {/* Card 2 - Conseil et suivi sur mesure */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
-              <UserCheck className="w-8 h-8 text-white" />
-            </div>
-            <p className="text-gray-700 font-inter font-normal text-base text-center">
-              Conseil et suivi sur mesure
-            </p>
-          </div>
+					{/* Main Description */}
+					<motion.p
+						className="text-gray-700 font-inter font-normal text-base lg:text-lg max-w-3xl mx-auto"
+						initial={{ opacity: 0, y: 20 }}
+						animate={
+							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+						}
+						transition={{ duration: 0.6, delay: 0.4 }}
+					>
+						Des solutions complètes pour accompagner la transformation
+						agricole et la régénération des sols
+					</motion.p>
+				</motion.div>
 
-          {/* Card 3 - Accompagnement des projets de régénération des sols */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm">
-            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
-              <Sprout className="w-8 h-8 text-white" />
-            </div>
-            <p className="text-gray-700 font-inter font-normal text-base text-center">
-              Accompagnement des projets de régénération des sols
-            </p>
-          </div>
+				{/* Service/Product Cards Grid */}
+				<motion.div
+					className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12"
+					initial="hidden"
+					animate={isInView ? "visible" : "hidden"}
+					variants={{
+						visible: {
+							transition: {
+								staggerChildren: 0.15,
+								delayChildren: 0.5,
+							},
+						},
+					}}
+				>
+					{solutions.map((solution, index) => {
+						const Icon = solution.icon;
+						return (
+							<motion.div
+								key={index}
+								className={`bg-white rounded-3xl p-6 shadow-sm ${
+									solution.colStart || ""
+								}`}
+								variants={{
+									hidden: { opacity: 0, y: 50, scale: 0.95 },
+									visible: {
+										opacity: 1,
+										y: 0,
+										scale: 1,
+										transition: {
+											duration: 0.5,
+											ease: "easeOut",
+										},
+									},
+								}}
+								whileHover={{ y: -5, scale: 1.02 }}
+								transition={{ duration: 0.3 }}
+							>
+								<motion.div
+									className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto"
+									initial={{
+										rotate: -180,
+										opacity: 0,
+										scale: 0,
+									}}
+									animate={
+										isInView
+											? {
+													rotate: 0,
+													opacity: 1,
+													scale: 1,
+											  }
+											: {
+													rotate: -180,
+													opacity: 0,
+													scale: 0,
+											  }
+									}
+									transition={{
+										type: "spring",
+										stiffness: 200,
+										damping: 15,
+										delay: 0.6 + index * 0.15,
+									}}
+								>
+									<Icon className="w-8 h-8 text-white" />
+								</motion.div>
+								<p className="text-gray-700 font-inter font-normal text-base text-center">
+									{solution.title}
+								</p>
+							</motion.div>
+						);
+					})}
+				</motion.div>
 
-          {/* Card 4 - Biostimulants naturels à base de microbiotes */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm md:col-start-1">
-            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
-              <FileText className="w-8 h-8 text-white" />
-            </div>
-            <p className="text-gray-700 font-inter font-normal text-base text-center">
-              Biostimulants naturels à base de microbiotes
-            </p>
-          </div>
-
-          {/* Card 5 - Accélérateur de maturation de compost */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm md:col-start-2">
-            <div className="bg-linear-to-b from-[#1B5E20] to-[#4FC3F7] rounded-xl w-16 h-16 flex items-center justify-center mb-4 mx-auto">
-              <Timer className="w-8 h-8 text-white" />
-            </div>
-            <p className="text-gray-700 font-inter font-normal text-base text-center">
-              Accélérateur de maturation de compost
-            </p>
-          </div>
-        </div>
-
-        {/* Concluding Statement */}
-        <div className="text-center">
-          <p className="text-gray-700 font-inter font-normal text-base lg:text-lg max-w-4xl mx-auto">
-            Chaque service est conçu pour maximiser la productivité agricole tout en préservant et restaurant l'équilibre naturel des écosystèmes.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+				{/* Concluding Statement */}
+				<motion.div
+					className="text-center"
+					initial={{ opacity: 0, y: 30 }}
+					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+					transition={{ duration: 0.6, delay: 1.2 }}
+				>
+					<p className="text-gray-700 font-inter font-normal text-base lg:text-lg max-w-4xl mx-auto">
+						Chaque service est conçu pour maximiser la productivité agricole
+						tout en préservant et restaurant l'équilibre naturel des
+						écosystèmes.
+					</p>
+				</motion.div>
+			</div>
+		</section>
+	);
 }
-
