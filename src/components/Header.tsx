@@ -64,7 +64,10 @@ export default function Header() {
 								key={link.href}
 								initial={{ opacity: 0, y: -20 }}
 								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+								transition={{
+									duration: 0.4,
+									delay: 0.3 + index * 0.1,
+								}}
 							>
 								<Link
 									href={link.href}
@@ -72,7 +75,7 @@ export default function Header() {
 								>
 									{link.label}
 									<motion.span
-										className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#1B5E20] group-hover:w-full transition-all duration-300"
+										className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#1B5E20] to-[#4FC3F7] group-hover:w-full transition-all duration-300"
 										initial={false}
 									/>
 								</Link>
@@ -142,10 +145,16 @@ export default function Header() {
 								exit="closed"
 								variants={{
 									open: {
-										transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+										transition: {
+											staggerChildren: 0.1,
+											delayChildren: 0.1,
+										},
 									},
 									closed: {
-										transition: { staggerChildren: 0.05, staggerDirection: -1 },
+										transition: {
+											staggerChildren: 0.05,
+											staggerDirection: -1,
+										},
 									},
 								}}
 							>
@@ -156,18 +165,24 @@ export default function Header() {
 											open: {
 												opacity: 1,
 												x: 0,
-												transition: { duration: 0.3 },
+												transition: {
+													duration: 0.3,
+												},
 											},
 											closed: {
 												opacity: 0,
 												x: -20,
-												transition: { duration: 0.2 },
+												transition: {
+													duration: 0.2,
+												},
 											},
 										}}
 									>
 										<Link
 											href={link.href}
-											onClick={() => setIsMenuOpen(false)}
+											onClick={() =>
+												setIsMenuOpen(false)
+											}
 											className="block text-base font-normal text-[#4A4A4A] hover:text-[#1B5E20] transition-colors font-inter py-2"
 										>
 											{link.label}
@@ -179,7 +194,10 @@ export default function Header() {
 										open: {
 											opacity: 1,
 											y: 0,
-											transition: { duration: 0.3, delay: 0.4 },
+											transition: {
+												duration: 0.3,
+												delay: 0.4,
+											},
 										},
 										closed: {
 											opacity: 0,
@@ -188,7 +206,9 @@ export default function Header() {
 										},
 									}}
 								>
-									<Button className="w-full mt-4">Demander une démo</Button>
+									<Button className="w-full mt-4">
+										Demander une démo
+									</Button>
 								</motion.div>
 							</motion.div>
 						</motion.div>

@@ -43,21 +43,47 @@ export default function Challenge() {
 				{/* Title Section */}
 				<motion.div
 					className="text-center mb-8"
-					initial={{ opacity: 0, y: 30 }}
-					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-					transition={{ duration: 0.6 }}
+					initial={{ opacity: 0, y: 40 }}
+					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+					transition={{
+						duration: 0.8,
+						ease: [0.16, 1, 0.3, 1], // Custom cubic-bezier for smoother animation
+					}}
 				>
 					<motion.div
 						className="flex items-center justify-center gap-2 mb-4 bg-[#FDD835]/20 rounded-3xl py-2 px-3 w-fit mx-auto"
-						initial={{ opacity: 0, scale: 0.9 }}
+						initial={{ opacity: 0, scale: 0.8, y: -10 }}
 						animate={
 							isInView
-								? { opacity: 1, scale: 1 }
-								: { opacity: 0, scale: 0.9 }
+								? { opacity: 1, scale: 1, y: 0 }
+								: { opacity: 0, scale: 0.8, y: -10 }
 						}
-						transition={{ duration: 0.4, delay: 0.2 }}
+						transition={{
+							type: "spring",
+							stiffness: 200,
+							damping: 20,
+							delay: 0.1,
+						}}
 					>
-						<AlertTriangle className="w-5 h-5 text-white" color="#FDD835" />
+						<motion.div
+							initial={{ rotate: -180, scale: 0 }}
+							animate={
+								isInView
+									? { rotate: 0, scale: 1 }
+									: { rotate: -180, scale: 0 }
+							}
+							transition={{
+								type: "spring",
+								stiffness: 200,
+								damping: 15,
+								delay: 0.2,
+							}}
+						>
+							<AlertTriangle
+								className="w-5 h-5 text-white"
+								color="#FDD835"
+							/>
+						</motion.div>
 						<h2 className="text-xl font-inter font-normal text-[#8D6E63]">
 							Le Défi
 						</h2>
@@ -66,11 +92,15 @@ export default function Challenge() {
 					{/* Challenge Description */}
 					<motion.p
 						className="text-primary font-inter font-normal text-base lg:text-lg max-w-4xl mx-auto mb-4"
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 30 }}
 						animate={
-							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
 						}
-						transition={{ duration: 0.6, delay: 0.3 }}
+						transition={{
+							duration: 0.7,
+							ease: [0.16, 1, 0.3, 1],
+							delay: 0.3,
+						}}
 					>
 						L'agriculture sénégalaise souffre de pratiques inadaptées, de
 						sols dégradés et d'un manque de données fiables. Résultat :
@@ -80,11 +110,15 @@ export default function Challenge() {
 					{/* Solution Statement */}
 					<motion.p
 						className="text-gray-700 font-inter font-normal text-base lg:text-lg max-w-4xl mx-auto"
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 30 }}
 						animate={
-							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
 						}
-						transition={{ duration: 0.6, delay: 0.4 }}
+						transition={{
+							duration: 0.7,
+							ease: [0.16, 1, 0.3, 1],
+							delay: 0.45,
+						}}
 					>
 						La Solution ENDAM Agri digitalise le conseil agricole pour
 						restaurer la fertilité des sols, améliorer la productivité et
@@ -100,8 +134,8 @@ export default function Challenge() {
 					variants={{
 						visible: {
 							transition: {
-								staggerChildren: 0.2,
-								delayChildren: 0.5,
+								staggerChildren: 0.15,
+								delayChildren: 0.6,
 							},
 						},
 					}}
@@ -113,43 +147,90 @@ export default function Challenge() {
 								key={index}
 								className={`${card.bgColor} rounded-2xl p-6`}
 								variants={{
-									hidden: { opacity: 0, y: 50, scale: 0.95 },
+									hidden: { opacity: 0, y: 60, scale: 0.9 },
 									visible: {
 										opacity: 1,
 										y: 0,
 										scale: 1,
 										transition: {
-											duration: 0.5,
-											ease: "easeOut",
+											type: "spring",
+											stiffness: 100,
+											damping: 15,
+											mass: 0.8,
 										},
 									},
 								}}
-								whileHover={{ y: -5, scale: 1.02 }}
-								transition={{ duration: 0.3 }}
+								whileHover={{
+									y: -8,
+									scale: 1.03,
+									transition: {
+										duration: 0.2,
+										ease: "easeOut",
+									},
+								}}
 							>
 								<motion.div
 									className={`${card.iconBg} rounded-xl w-12 h-12 flex items-center justify-center mb-4`}
-									initial={{ rotate: -180, opacity: 0 }}
+									initial={{
+										rotate: -180,
+										opacity: 0,
+										scale: 0,
+									}}
 									animate={
 										isInView
-											? { rotate: 0, opacity: 1 }
-											: { rotate: -180, opacity: 0 }
+											? {
+													rotate: 0,
+													opacity: 1,
+													scale: 1,
+											  }
+											: {
+													rotate: -180,
+													opacity: 0,
+													scale: 0,
+											  }
 									}
 									transition={{
-										duration: 0.6,
-										delay: 0.6 + index * 0.2,
+										type: "spring",
+										stiffness: 200,
+										damping: 15,
+										delay: 0.7 + index * 0.15,
 									}}
 								>
 									<Icon
 										className={`w-6 h-6 ${card.iconColor}`}
 									/>
 								</motion.div>
-								<h3 className="text-primary font-poppins font-medium text-lg mb-2">
+								<motion.h3
+									className="text-primary font-poppins font-medium text-lg mb-2"
+									initial={{ opacity: 0, x: -20 }}
+									animate={
+										isInView
+											? { opacity: 1, x: 0 }
+											: { opacity: 0, x: -20 }
+									}
+									transition={{
+										duration: 0.5,
+										ease: [0.16, 1, 0.3, 1],
+										delay: 0.8 + index * 0.15,
+									}}
+								>
 									{card.title}
-								</h3>
-								<p className="text-gray-700 font-inter font-normal text-sm">
+								</motion.h3>
+								<motion.p
+									className="text-gray-700 font-inter font-normal text-sm"
+									initial={{ opacity: 0 }}
+									animate={
+										isInView
+											? { opacity: 1 }
+											: { opacity: 0 }
+									}
+									transition={{
+										duration: 0.6,
+										delay: 0.9 + index * 0.15,
+									}}
+								>
 									{card.description}
-								</p>
+								</motion.p>
 							</motion.div>
 						);
 					})}
@@ -158,9 +239,13 @@ export default function Challenge() {
 				{/* Concluding Statement */}
 				<motion.div
 					className="text-center mt-12"
-					initial={{ opacity: 0, y: 30 }}
-					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-					transition={{ duration: 0.6, delay: 1.1 }}
+					initial={{ opacity: 0, y: 40 }}
+					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+					transition={{
+						duration: 0.8,
+						ease: [0.16, 1, 0.3, 1],
+						delay: 1.2,
+					}}
 				>
 					<p className="text-gray-700 font-inter font-normal text-base lg:text-lg max-w-4xl mx-auto">
 						Avec ENDAM Agri, les producteurs passent d'une agriculture

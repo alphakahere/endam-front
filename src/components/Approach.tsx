@@ -45,22 +45,45 @@ export default function Approach() {
 				{/* Header Section */}
 				<motion.div
 					className="text-center mb-12"
-					initial={{ opacity: 0, y: 30 }}
-					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-					transition={{ duration: 0.6 }}
+					initial={{ opacity: 0, y: 40 }}
+					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+					transition={{
+						duration: 0.8,
+						ease: [0.16, 1, 0.3, 1],
+					}}
 				>
 					<motion.div
 						className="flex items-center justify-center gap-2 mb-4"
-						initial={{ opacity: 0, scale: 0.9 }}
+						initial={{ opacity: 0, scale: 0.8, y: -10 }}
 						animate={
 							isInView
-								? { opacity: 1, scale: 1 }
-								: { opacity: 0, scale: 0.9 }
+								? { opacity: 1, scale: 1, y: 0 }
+								: { opacity: 0, scale: 0.8, y: -10 }
 						}
-						transition={{ duration: 0.4, delay: 0.2 }}
+						transition={{
+							type: "spring",
+							stiffness: 200,
+							damping: 20,
+							delay: 0.1,
+						}}
 					>
 						<div className="bg-[#FDD835]/20 rounded-3xl px-4 py-2 flex items-center gap-2">
-							<Zap className="w-5 h-5 text-primary" />
+							<motion.div
+								initial={{ rotate: -180, scale: 0 }}
+								animate={
+									isInView
+										? { rotate: 0, scale: 1 }
+										: { rotate: -180, scale: 0 }
+								}
+								transition={{
+									type: "spring",
+									stiffness: 200,
+									damping: 15,
+									delay: 0.2,
+								}}
+							>
+								<Zap className="w-5 h-5 text-primary" />
+							</motion.div>
 							<span className="text-[#8D6E63] font-inter font-normal text-xl">
 								Notre Approche
 							</span>
@@ -68,11 +91,15 @@ export default function Approach() {
 					</motion.div>
 					<motion.h2
 						className="text-base font-poppins font-normal text-primary"
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 30 }}
 						animate={
-							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
 						}
-						transition={{ duration: 0.6, delay: 0.3 }}
+						transition={{
+							duration: 0.7,
+							ease: [0.16, 1, 0.3, 1],
+							delay: 0.3,
+						}}
 					>
 						Comment ça marche ?
 					</motion.h2>
@@ -83,23 +110,36 @@ export default function Approach() {
 					{/* Left Column */}
 					<motion.div
 						className="flex flex-col gap-6"
-						initial={{ opacity: 0, x: -50 }}
+						initial={{ opacity: 0, x: -60 }}
 						animate={
-							isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+							isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }
 						}
-						transition={{ duration: 0.8, delay: 0.4 }}
+						transition={{
+							duration: 0.9,
+							ease: [0.16, 1, 0.3, 1],
+							delay: 0.4,
+						}}
 					>
 						{/* Top Gradient Box */}
 						<motion.div
 							className="bg-linear-to-b from-[#1B5E20] to-[#81C784] rounded-2xl p-8 text-white"
-							initial={{ opacity: 0, y: 30 }}
+							initial={{ opacity: 0, y: 40, scale: 0.95 }}
 							animate={
 								isInView
-									? { opacity: 1, y: 0 }
-									: { opacity: 0, y: 30 }
+									? { opacity: 1, y: 0, scale: 1 }
+									: { opacity: 0, y: 40, scale: 0.95 }
 							}
-							transition={{ duration: 0.6, delay: 0.5 }}
-							whileHover={{ scale: 1.02, y: -5 }}
+							transition={{
+								type: "spring",
+								stiffness: 100,
+								damping: 15,
+								delay: 0.5,
+							}}
+							whileHover={{
+								scale: 1.02,
+								y: -8,
+								transition: { duration: 0.3, ease: "easeOut" },
+							}}
 						>
 							<h3 className="text-xl lg:text-2xl font-poppins font-medium mb-4">
 								Une solution complète pour sortir de l'incertitude
@@ -115,14 +155,23 @@ export default function Approach() {
 						{/* Bottom White Box */}
 						<motion.div
 							className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
-							initial={{ opacity: 0, y: 30 }}
+							initial={{ opacity: 0, y: 40, scale: 0.95 }}
 							animate={
 								isInView
-									? { opacity: 1, y: 0 }
-									: { opacity: 0, y: 30 }
+									? { opacity: 1, y: 0, scale: 1 }
+									: { opacity: 0, y: 40, scale: 0.95 }
 							}
-							transition={{ duration: 0.6, delay: 0.7 }}
-							whileHover={{ scale: 1.02, y: -5 }}
+							transition={{
+								type: "spring",
+								stiffness: 100,
+								damping: 15,
+								delay: 0.7,
+							}}
+							whileHover={{
+								scale: 1.02,
+								y: -8,
+								transition: { duration: 0.3, ease: "easeOut" },
+							}}
 						>
 							<div className="flex items-start gap-4">
 								<motion.div
@@ -133,7 +182,12 @@ export default function Approach() {
 											? { rotate: 0, scale: 1 }
 											: { rotate: -180, scale: 0 }
 									}
-									transition={{ duration: 0.6, delay: 0.8 }}
+									transition={{
+										type: "spring",
+										stiffness: 200,
+										damping: 15,
+										delay: 0.8,
+									}}
 								>
 									<Activity className="w-6 h-6 text-primary" />
 								</motion.div>
@@ -161,11 +215,15 @@ export default function Approach() {
 					{/* Right Column */}
 					<motion.div
 						className="flex flex-col gap-6"
-						initial={{ opacity: 0, x: 50 }}
+						initial={{ opacity: 0, x: 60 }}
 						animate={
-							isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+							isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }
 						}
-						transition={{ duration: 0.8, delay: 0.4 }}
+						transition={{
+							duration: 0.9,
+							ease: [0.16, 1, 0.3, 1],
+							delay: 0.4,
+						}}
 					>
 						{/* Three Phone Mockups */}
 						<motion.div
@@ -175,7 +233,7 @@ export default function Approach() {
 							variants={{
 								visible: {
 									transition: {
-										staggerChildren: 0.2,
+										staggerChildren: 0.15,
 										delayChildren: 0.6,
 									},
 								},
@@ -187,25 +245,32 @@ export default function Approach() {
 									variants={{
 										hidden: {
 											opacity: 0,
-											y: 50,
-											scale: 0.9,
+											y: 60,
+											scale: 0.85,
+											rotate: -5,
 										},
 										visible: {
 											opacity: 1,
 											y: 0,
 											scale: 1,
+											rotate: 0,
 											transition: {
-												duration: 0.5,
-												ease: "easeOut",
+												type: "spring",
+												stiffness: 100,
+												damping: 15,
+												mass: 0.8,
 											},
 										},
 									}}
 									whileHover={{
-										y: -10,
-										scale: 1.05,
+										y: -12,
+										scale: 1.06,
 										zIndex: 10,
+										transition: {
+											duration: 0.3,
+											ease: "easeOut",
+										},
 									}}
-									transition={{ duration: 0.3 }}
 								>
 									<Image
 										src={phone.src}
@@ -226,7 +291,7 @@ export default function Approach() {
 							variants={{
 								visible: {
 									transition: {
-										staggerChildren: 0.2,
+										staggerChildren: 0.15,
 										delayChildren: 1.2,
 									},
 								},
@@ -241,51 +306,92 @@ export default function Approach() {
 										variants={{
 											hidden: {
 												opacity: 0,
-												scale: 0.9,
-												y: 30,
+												scale: 0.85,
+												y: 40,
 											},
 											visible: {
 												opacity: 1,
 												scale: 1,
 												y: 0,
 												transition: {
-													duration: 0.5,
-													ease: "easeOut",
+													type: "spring",
+													stiffness: 100,
+													damping: 15,
+													mass: 0.8,
 												},
 											},
 										}}
-										whileHover={{ y: -5, scale: 1.05 }}
-										transition={{ duration: 0.3 }}
+										whileHover={{
+											y: -8,
+											scale: 1.05,
+											transition: {
+												duration: 0.3,
+												ease: "easeOut",
+											},
+										}}
 									>
 										<motion.div
 											initial={{
-												rotate: -90,
+												rotate: -180,
 												opacity: 0,
+												scale: 0,
 											}}
 											animate={
 												isInView
 													? {
 															rotate: 0,
 															opacity: 1,
+															scale: 1,
 													  }
 													: {
-															rotate: -90,
+															rotate: -180,
 															opacity: 0,
+															scale: 0,
 													  }
 											}
 											transition={{
-												duration: 0.5,
-												delay: 1.3 + index * 0.2,
+												type: "spring",
+												stiffness: 200,
+												damping: 15,
+												delay: 1.3 + index * 0.15,
 											}}
 										>
 											<Icon className="w-10 h-10 text-primary mb-2" />
 										</motion.div>
-										<h4 className="text-primary font-poppins font-medium text-xl mb-2">
+										<motion.h4
+											className="text-primary font-poppins font-medium text-xl mb-2"
+											initial={{ opacity: 0, x: -20 }}
+											animate={
+												isInView
+													? { opacity: 1, x: 0 }
+													: {
+															opacity: 0,
+															x: -20,
+													  }
+											}
+											transition={{
+												duration: 0.5,
+												ease: [0.16, 1, 0.3, 1],
+												delay: 1.4 + index * 0.15,
+											}}
+										>
 											{box.title}
-										</h4>
-										<p className="text-gray-700 font-inter font-normal text-base">
+										</motion.h4>
+										<motion.p
+											className="text-gray-700 font-inter font-normal text-base"
+											initial={{ opacity: 0 }}
+											animate={
+												isInView
+													? { opacity: 1 }
+													: { opacity: 0 }
+											}
+											transition={{
+												duration: 0.6,
+												delay: 1.5 + index * 0.15,
+											}}
+										>
 											{box.description}
-										</p>
+										</motion.p>
 									</motion.div>
 								);
 							})}
