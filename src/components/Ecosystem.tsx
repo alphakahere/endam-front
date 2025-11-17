@@ -88,7 +88,7 @@ export default function Ecosystem() {
 										},
 									},
 								}}
-								whileHover={{ y: -5, scale: 1.02, shadow: "lg" }}
+								whileHover={{ y: -5, scale: 1.02 }}
 								transition={{ duration: 0.3 }}
 							>
 								<motion.div
