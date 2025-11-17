@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Button from "@/ui/Button";
 import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react";
 import Image from "next/image";
@@ -6,22 +9,54 @@ export default function Hero() {
 	return (
 		<section className="relative overflow-hidden bg-linear-to-r from-primary/10 to-black/5">
 			<div className="py-8 sm:py-12 md:py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 gap-8 lg:gap-6">
-				<div className="w-full lg:w-1/2 order-2 lg:order-1">
-					<div className="flex items-center gap-2 bg-white rounded-2xl sm:rounded-3xl w-full sm:w-min px-2 sm:px-3 py-1.5 sm:py-1 mb-4 sm:mb-0">
+				<motion.div
+					className="w-full lg:w-1/2 order-2 lg:order-1"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+				>
+					{/* Badge */}
+					<motion.div
+						className="flex items-center gap-2 bg-white rounded-2xl sm:rounded-3xl w-full sm:w-min px-2 sm:px-3 py-1.5 sm:py-1 mb-4 sm:mb-0"
+						initial={{ opacity: 0, scale: 0.9 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ delay: 0.2, duration: 0.4 }}
+					>
 						<Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#FDD835] shrink-0" />
 						<span className="text-xs sm:text-sm text-primary font-inter font-normal break-words sm:whitespace-nowrap">
 							Propulsé par l'IA & les données satellitaires
 						</span>
-					</div>
-					<h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-poppins font-medium text-primary my-4 sm:my-5 md:my-6">
+					</motion.div>
+
+					{/* Title */}
+					<motion.h1
+						className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-poppins font-medium text-primary my-4 sm:my-5 md:my-6"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.3, duration: 0.6 }}
+					>
 						Transformez l'incertitude en productivité et prospérité
-					</h1>
-					<p className="text-sm sm:text-base text-gray-700 font-inter font-normal mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
+					</motion.h1>
+
+					{/* Description */}
+					<motion.p
+						className="text-sm sm:text-base text-gray-700 font-inter font-normal mb-4 sm:mb-6 lg:mb-8 leading-relaxed"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.4, duration: 0.6 }}
+					>
 						ENDAM Agri offre aux agriculteurs et institutions des données en
 						temps réel, des analyses IA et des recommandations intelligentes
 						pour augmenter les rendements et réduire les risques.
-					</p>
-					<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+					</motion.p>
+
+					{/* Buttons */}
+					<motion.div
+						className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.5, duration: 0.6 }}
+					>
 						<Button className="flex items-center justify-center gap-2 text-xs sm:text-sm w-full sm:w-auto">
 							Exprimer vos besoins
 							<ArrowRight className="w-4 h-4" />
@@ -32,11 +67,22 @@ export default function Hero() {
 						>
 							Découvrir la plateforme
 						</Button>
-					</div>
-				</div>
-				<div className="w-full lg:w-1/2 flex justify-center lg:justify-end order-1 lg:order-2">
+					</motion.div>
+				</motion.div>
+
+				{/* Image Section */}
+				<motion.div
+					className="w-full lg:w-1/2 flex justify-center lg:justify-end order-1 lg:order-2"
+					initial={{ opacity: 0, x: 30 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ duration: 0.8, delay: 0.3 }}
+				>
 					<div className="relative w-full sm:max-w-[400px] md:max-w-[800px] lg:max-w-[551px]">
-						<div className="relative w-full aspect-[551/368]">
+						<motion.div
+							className="relative w-full aspect-[551/368]"
+							whileHover={{ scale: 1.02 }}
+							transition={{ duration: 0.3 }}
+						>
 							<Image
 								src="/images/hero.png"
 								alt="Hero Image"
@@ -44,9 +90,30 @@ export default function Hero() {
 								sizes="(max-width: 640px) 100vw, (max-width: 768px) 400px, (max-width: 1024px) 500px, 551px"
 								className="rounded-2xl sm:rounded-3xl object-cover"
 							/>
-						</div>
-						{/* Bottom Left Badge */}
-						<div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-white rounded-xl sm:rounded-2xl p-2 sm:p-3 flex items-center gap-1.5 sm:gap-2 shadow-lg z-10">
+						</motion.div>
+
+						{/* Bottom Left Badge - Floating Animation */}
+						<motion.div
+							className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-white rounded-xl sm:rounded-2xl p-2 sm:p-3 flex items-center gap-1.5 sm:gap-2 shadow-lg z-10"
+							initial={{ opacity: 0, scale: 0.8, y: 20 }}
+							animate={{
+								opacity: 1,
+								scale: 1,
+								y: 0,
+							}}
+							transition={{
+								opacity: { delay: 0.8, duration: 0.5 },
+								scale: { delay: 0.8, duration: 0.5 },
+								y: {
+									duration: 3,
+									repeat: Infinity,
+									repeatType: "reverse",
+									ease: "easeInOut",
+									delay: 1,
+								},
+							}}
+						>
+							{/* Badge content remains same */}
 							<div className="bg-[#81C784] w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
 								<TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
 							</div>
@@ -61,9 +128,30 @@ export default function Hero() {
 									Augm. moyenne
 								</p>
 							</div>
-						</div>
-						{/* Top Right Badge */}
-						<div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white rounded-xl sm:rounded-2xl p-2 sm:p-3 flex items-center gap-1.5 sm:gap-2 shadow-lg z-10">
+						</motion.div>
+
+						{/* Top Right Badge - Floating Animation */}
+						<motion.div
+							className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white rounded-xl sm:rounded-2xl p-2 sm:p-3 flex items-center gap-1.5 sm:gap-2 shadow-lg z-10"
+							initial={{ opacity: 0, scale: 0.8, y: -20 }}
+							animate={{
+								opacity: 1,
+								scale: 1,
+								y: 0,
+							}}
+							transition={{
+								opacity: { delay: 1, duration: 0.5 },
+								scale: { delay: 1, duration: 0.5 },
+								y: {
+									duration: 2.5,
+									repeat: Infinity,
+									repeatType: "reverse",
+									ease: "easeInOut",
+									delay: 1.2,
+								},
+							}}
+						>
+							{/* Badge content remains same */}
 							<div className="bg-[#4FC3F7] w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
 								<Users className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
 							</div>
@@ -78,11 +166,10 @@ export default function Hero() {
 									Agriculteurs
 								</p>
 							</div>
-						</div>
+						</motion.div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);
 }
-
