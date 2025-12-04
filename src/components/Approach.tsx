@@ -41,12 +41,16 @@ export default function Approach() {
 
 	return (
 		<section ref={ref} className="py-20 bg-white">
-			<div className="container mx-auto px-4 sm:px-6 md:px-10">
+			<div className="px-4 sm:px-6 md:px-10">
 				{/* Header Section */}
 				<motion.div
 					className="text-center mb-12"
 					initial={{ opacity: 0, y: 40 }}
-					animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+					animate={
+						isInView
+							? { opacity: 1, y: 0 }
+							: { opacity: 0, y: 40 }
+					}
 					transition={{
 						duration: 0.8,
 						ease: [0.16, 1, 0.3, 1],
@@ -58,7 +62,11 @@ export default function Approach() {
 						animate={
 							isInView
 								? { opacity: 1, scale: 1, y: 0 }
-								: { opacity: 0, scale: 0.8, y: -10 }
+								: {
+										opacity: 0,
+										scale: 0.8,
+										y: -10,
+								  }
 						}
 						transition={{
 							type: "spring",
@@ -69,11 +77,20 @@ export default function Approach() {
 					>
 						<div className="bg-[#FDD835]/20 rounded-3xl px-4 py-2 flex items-center gap-2">
 							<motion.div
-								initial={{ rotate: -180, scale: 0 }}
+								initial={{
+									rotate: -180,
+									scale: 0,
+								}}
 								animate={
 									isInView
-										? { rotate: 0, scale: 1 }
-										: { rotate: -180, scale: 0 }
+										? {
+												rotate: 0,
+												scale: 1,
+										  }
+										: {
+												rotate: -180,
+												scale: 0,
+										  }
 								}
 								transition={{
 									type: "spring",
@@ -93,7 +110,9 @@ export default function Approach() {
 						className="text-base font-poppins font-normal text-primary"
 						initial={{ opacity: 0, y: 30 }}
 						animate={
-							isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+							isInView
+								? { opacity: 1, y: 0 }
+								: { opacity: 0, y: 30 }
 						}
 						transition={{
 							duration: 0.7,
@@ -112,7 +131,9 @@ export default function Approach() {
 						className="flex flex-col gap-6"
 						initial={{ opacity: 0, x: -60 }}
 						animate={
-							isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }
+							isInView
+								? { opacity: 1, x: 0 }
+								: { opacity: 0, x: -60 }
 						}
 						transition={{
 							duration: 0.9,
@@ -123,11 +144,23 @@ export default function Approach() {
 						{/* Top Gradient Box */}
 						<motion.div
 							className="bg-linear-to-b from-[#1B5E20] to-[#81C784] rounded-2xl p-8 text-white"
-							initial={{ opacity: 0, y: 40, scale: 0.95 }}
+							initial={{
+								opacity: 0,
+								y: 40,
+								scale: 0.95,
+							}}
 							animate={
 								isInView
-									? { opacity: 1, y: 0, scale: 1 }
-									: { opacity: 0, y: 40, scale: 0.95 }
+									? {
+											opacity: 1,
+											y: 0,
+											scale: 1,
+									  }
+									: {
+											opacity: 0,
+											y: 40,
+											scale: 0.95,
+									  }
 							}
 							transition={{
 								type: "spring",
@@ -138,16 +171,22 @@ export default function Approach() {
 							whileHover={{
 								scale: 1.02,
 								y: -8,
-								transition: { duration: 0.3, ease: "easeOut" },
+								transition: {
+									duration: 0.3,
+									ease: "easeOut",
+								},
 							}}
 						>
 							<h3 className="text-xl lg:text-2xl font-poppins font-medium mb-4">
-								Une solution complète pour sortir de l'incertitude
+								Une solution complète pour
+								sortir de l'incertitude
 							</h3>
 							<p className="font-inter font-normal text-base lg:text-lg">
-								Endam Agri permet aux petits producteurs africains
-								de sortir de l'incertitude en combinant conseil
-								agricole digitalisé et solutions biologiques
+								Endam Agri permet aux petits
+								producteurs africains de sortir
+								de l'incertitude en combinant
+								conseil agricole digitalisé et
+								solutions biologiques
 								innovantes.
 							</p>
 						</motion.div>
@@ -155,11 +194,23 @@ export default function Approach() {
 						{/* Bottom White Box */}
 						<motion.div
 							className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
-							initial={{ opacity: 0, y: 40, scale: 0.95 }}
+							initial={{
+								opacity: 0,
+								y: 40,
+								scale: 0.95,
+							}}
 							animate={
 								isInView
-									? { opacity: 1, y: 0, scale: 1 }
-									: { opacity: 0, y: 40, scale: 0.95 }
+									? {
+											opacity: 1,
+											y: 0,
+											scale: 1,
+									  }
+									: {
+											opacity: 0,
+											y: 40,
+											scale: 0.95,
+									  }
 							}
 							transition={{
 								type: "spring",
@@ -170,17 +221,29 @@ export default function Approach() {
 							whileHover={{
 								scale: 1.02,
 								y: -8,
-								transition: { duration: 0.3, ease: "easeOut" },
+								transition: {
+									duration: 0.3,
+									ease: "easeOut",
+								},
 							}}
 						>
 							<div className="flex items-start gap-4">
 								<motion.div
 									className="bg-[#FDD835] rounded-full w-12 h-12 flex items-center justify-center shrink-0"
-									initial={{ rotate: -180, scale: 0 }}
+									initial={{
+										rotate: -180,
+										scale: 0,
+									}}
 									animate={
 										isInView
-											? { rotate: 0, scale: 1 }
-											: { rotate: -180, scale: 0 }
+											? {
+													rotate: 0,
+													scale: 1,
+											  }
+											: {
+													rotate: -180,
+													scale: 0,
+											  }
 									}
 									transition={{
 										type: "spring",
@@ -193,18 +256,29 @@ export default function Approach() {
 								</motion.div>
 								<div>
 									<h3 className="text-primary font-poppins font-medium text-lg mb-3">
-										Un processus simple et efficace
+										Un processus simple
+										et efficace
 									</h3>
 									<p className="text-gray-700 font-inter font-normal text-base leading-relaxed">
-										Nos agents collectent des données
-										agronomiques directement sur le terrain
-										et le producteur reçoit des conseils
-										personnalisés sur les bonnes pratiques
-										agricoles et un itinéraire technique
-										dynamique adaptés à sa parcelle : quoi
-										semer, quand, quels dosages et comment
-										régénérer son sol grâce à des
-										biostimulants et biofertilisants
+										Nos agents
+										collectent des
+										données agronomiques
+										directement sur le
+										terrain et le
+										producteur reçoit
+										des conseils
+										personnalisés sur
+										les bonnes pratiques
+										agricoles et un
+										itinéraire technique
+										dynamique adaptés à
+										sa parcelle : quoi
+										semer, quand, quels
+										dosages et comment
+										régénérer son sol
+										grâce à des
+										biostimulants et
+										biofertilisants
 										naturels.
 									</p>
 								</div>
@@ -217,7 +291,9 @@ export default function Approach() {
 						className="flex flex-col gap-6"
 						initial={{ opacity: 0, x: 60 }}
 						animate={
-							isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }
+							isInView
+								? { opacity: 1, x: 0 }
+								: { opacity: 0, x: 60 }
 						}
 						transition={{
 							duration: 0.9,
@@ -229,7 +305,9 @@ export default function Approach() {
 						<motion.div
 							className="flex items-center justify-center gap-4"
 							initial="hidden"
-							animate={isInView ? "visible" : "hidden"}
+							animate={
+								isInView ? "visible" : "hidden"
+							}
 							variants={{
 								visible: {
 									transition: {
@@ -275,8 +353,8 @@ export default function Approach() {
 									<Image
 										src={phone.src}
 										alt={phone.alt}
-										width={180}
-										height={320}
+										width={257}
+										height={531}
 										className="w-full h-auto object-cover rounded-2xl"
 									/>
 								</motion.div>
@@ -287,7 +365,9 @@ export default function Approach() {
 						<motion.div
 							className="grid grid-cols-2 gap-4"
 							initial="hidden"
-							animate={isInView ? "visible" : "hidden"}
+							animate={
+								isInView ? "visible" : "hidden"
+							}
 							variants={{
 								visible: {
 									transition: {
@@ -313,12 +393,13 @@ export default function Approach() {
 												opacity: 1,
 												scale: 1,
 												y: 0,
-												transition: {
-													type: "spring",
-													stiffness: 100,
-													damping: 15,
-													mass: 0.8,
-												},
+												transition:
+													{
+														type: "spring",
+														stiffness: 100,
+														damping: 15,
+														mass: 0.8,
+													},
 											},
 										}}
 										whileHover={{
@@ -353,17 +434,26 @@ export default function Approach() {
 												type: "spring",
 												stiffness: 200,
 												damping: 15,
-												delay: 1.3 + index * 0.15,
+												delay:
+													1.3 +
+													index *
+														0.15,
 											}}
 										>
 											<Icon className="w-10 h-10 text-primary mb-2" />
 										</motion.div>
 										<motion.h4
 											className="text-primary font-poppins font-medium text-xl mb-2"
-											initial={{ opacity: 0, x: -20 }}
+											initial={{
+												opacity: 0,
+												x: -20,
+											}}
 											animate={
 												isInView
-													? { opacity: 1, x: 0 }
+													? {
+															opacity: 1,
+															x: 0,
+													  }
 													: {
 															opacity: 0,
 															x: -20,
@@ -371,26 +461,45 @@ export default function Approach() {
 											}
 											transition={{
 												duration: 0.5,
-												ease: [0.16, 1, 0.3, 1],
-												delay: 1.4 + index * 0.15,
+												ease: [
+													0.16,
+													1,
+													0.3,
+													1,
+												],
+												delay:
+													1.4 +
+													index *
+														0.15,
 											}}
 										>
 											{box.title}
 										</motion.h4>
 										<motion.p
 											className="text-gray-700 font-inter font-normal text-base"
-											initial={{ opacity: 0 }}
+											initial={{
+												opacity: 0,
+											}}
 											animate={
 												isInView
-													? { opacity: 1 }
-													: { opacity: 0 }
+													? {
+															opacity: 1,
+													  }
+													: {
+															opacity: 0,
+													  }
 											}
 											transition={{
 												duration: 0.6,
-												delay: 1.5 + index * 0.15,
+												delay:
+													1.5 +
+													index *
+														0.15,
 											}}
 										>
-											{box.description}
+											{
+												box.description
+											}
 										</motion.p>
 									</motion.div>
 								);
